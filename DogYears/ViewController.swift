@@ -31,6 +31,19 @@ class ViewController: UIViewController {
         humanYearsTextField.text = ""
         humanYearsTextField.resignFirstResponder()
     }
-
+    
+    @IBAction func realDogYearsButton(sender: UIButton) {
+        let firstTwoYears = 10.5
+        let everyYearAfter = 4
+        resultingYearsLabel.hidden = false
+        if humanYearsTextField.text.toInt()! <= 2 {
+            resultingYearsLabel.text = "\(Double(humanYearsTextField.text.toInt()!) * firstTwoYears)"
+        }
+        else {
+            resultingYearsLabel.text = "\(((humanYearsTextField.text.toInt()! - 2) * everyYearAfter) + 21)"
+        }
+        humanYearsTextField.text = ""
+        humanYearsTextField.resignFirstResponder()
+    }
+    
 }
-
